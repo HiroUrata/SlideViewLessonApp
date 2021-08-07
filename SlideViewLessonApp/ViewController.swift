@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var showButton: UIButton!
     
-    var intervalArray = [0.25, 0.50, 0.75]
+    var intervalArray = [0.25, 0.50, 0.75, 1.00]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +48,10 @@ class ViewController: UIViewController {
                 }else if time == 0.75{
                     
                     createLeftButton()
+                    
+                }else if time == 1.00{
+                    
+                    sender.isHidden = true
                     
                 }
                 
