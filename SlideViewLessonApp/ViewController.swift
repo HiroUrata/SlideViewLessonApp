@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         
         createUpButton()
         createUnderButton()
+        createRightButton()
     }
     
     func createUpButton(){
@@ -55,6 +56,18 @@ class ViewController: UIViewController {
         underButton.layer.cornerRadius = 50.0
         
         self.view.addSubview(underButton)
+        
+    }
+    
+    func createRightButton(){
+        
+        let rightButton = UIButton(frame: CGRect(x: showButton.frame.minX + (showButton.frame.size.width + 10), y: showButton.frame.minY, width: showButton.frame.size.width, height: showButton.frame.size.height))
+        
+        rightButton.backgroundColor = UIColor.systemGreen
+        
+        rightButton.layer.cornerRadius = 50.0
+        
+        self.view.addSubview(rightButton)
         
     }
     
