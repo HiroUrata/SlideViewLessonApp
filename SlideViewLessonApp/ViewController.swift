@@ -30,9 +30,13 @@ class ViewController: UIViewController {
     
     @IBAction func show(_ sender: UIButton) {
         
+        
+        
         createUpButton()
         createUnderButton()
         createRightButton()
+        createLeftButton()
+        
     }
     
     func createUpButton(){
@@ -71,6 +75,17 @@ class ViewController: UIViewController {
         
     }
     
+    func createLeftButton(){
+        
+        let leftButton = UIButton(frame: CGRect(x: showButton.frame.minX - (showButton.frame.size.width + 10), y: showButton.frame.minY, width: showButton.frame.size.width, height: showButton.frame.size.height))
+        
+        leftButton.backgroundColor = UIColor.systemGreen
+        
+        leftButton.layer.cornerRadius = 50.0
+        
+        self.view.addSubview(leftButton)
+        
+    }
     
 }
 
