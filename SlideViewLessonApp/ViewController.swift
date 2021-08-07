@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     @IBAction func show(_ sender: UIButton) {
         
         createUpButton()
-        
+        createUnderButton()
     }
     
     func createUpButton(){
@@ -45,6 +45,19 @@ class ViewController: UIViewController {
         self.view.addSubview(upButton)
         
     }
+    
+    func createUnderButton(){
+        
+        let underButton = UIButton(frame: CGRect(x: showButton.frame.minX, y: showButton.frame.minY + (showButton.frame.size.height + 10), width: showButton.frame.size.width, height: showButton.frame.size.height))
+     
+        underButton.backgroundColor = UIColor.systemGreen
+        
+        underButton.layer.cornerRadius = 50.0
+        
+        self.view.addSubview(underButton)
+        
+    }
+    
     
 }
 
