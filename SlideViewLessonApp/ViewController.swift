@@ -9,23 +9,40 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var showButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-       createSlideView()
+      
+        
         
     }
 
-    func createSlideView(){
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        let slideView = UIView(frame: CGRect(x: self.view.bounds.minX, y: self.view.bounds.minY, width: self.view.frame.size.width / 2, height: self.view.frame.size.height))
+        showButton.layer.cornerRadius = 50.0
         
-        slideView.backgroundColor = UIColor.systemGreen
-//        slideView.layer.shadowOffset
+    }
+    
+    
+    @IBAction func show(_ sender: UIButton) {
         
-        self.view.addSubview(slideView)
+        createUpButton()
+        
+    }
+    
+    func createUpButton(){
+        
+        let upButton = UIButton(frame: CGRect(x: showButton.frame.minX, y: showButton.frame.minY - (showButton.frame.size.height + 10), width: showButton.frame.size.width, height: showButton.frame.size.height))
+        
+        upButton.backgroundColor = UIColor.systemGreen
+        
+        upButton.layer.cornerRadius = 50.0
+        
+        self.view.addSubview(upButton)
         
     }
     
