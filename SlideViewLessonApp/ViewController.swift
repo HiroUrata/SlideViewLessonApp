@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var showButton: UIButton!
     
+    var intervalArray = [0.25, 0.50, 0.75]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +31,29 @@ class ViewController: UIViewController {
     
     @IBAction func show(_ sender: UIButton) {
         
-        
-        
         createUpButton()
-        createUnderButton()
-        createRightButton()
-        createLeftButton()
+        
+        for time in intervalArray{
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + time) { [self] in
+                
+                if time == 0.25{
+                    
+                    createUnderButton()
+                    
+                }else if time == 0.50{
+                    
+                    createRightButton()
+                    
+                }else if time == 0.75{
+                    
+                    createLeftButton()
+                    
+                }
+                
+            }
+            
+        }
         
     }
     
